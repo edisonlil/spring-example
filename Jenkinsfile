@@ -24,6 +24,7 @@ pipeline {
         stage('运行容器'){
             steps {
                  sh """
+                 docker rm -f spring-example
                  docker run -d -p80:80 --name spring-example spring-example:latest
                  """
             }
