@@ -17,8 +17,7 @@ pipeline {
         stage('镜像构建'){
             steps {
                  sh """
-                 cd $PWD/src/main/docker
-                 docker build -t spring-example:latest
+                 docker build -f $WORKSPACE/src/main/docker/Dockerfile -t spring-example:latest .
                  """
             }
         }
